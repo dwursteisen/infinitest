@@ -17,6 +17,10 @@
 		</repository>
 	</repositories>
 
+    <properties>
+        <open.api.version>12.0.0</open.api.version>
+    </properties>
+
 	<build>
 		<resources>
 			<resource>
@@ -70,37 +74,37 @@
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>annotations</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>bootstrap</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>extensions</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>idea</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>openapi</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.intellij.idea</groupId>
 			<artifactId>util</artifactId>
-			<version>8.1.1</version>
+			<version>${open.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
