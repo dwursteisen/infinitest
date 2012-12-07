@@ -123,18 +123,16 @@ public class IdeaModuleSettings implements ModuleSettings {
 		// Classpath order is significant
 		List<File> classpathElements = new ArrayList<File>();
 
-		for (OrderEntry entry : moduleRootManagerInstance().getOrderEntries()) {
-			for (VirtualFile virtualFile : entry.getFiles(OrderRootType.COMPILATION_CLASSES)) {
+        for (VirtualFile virtualFile : compilerModuleExtensionInstance().getOutputRoots(true)) {
 				classpathElements.add(new File(virtualFile.getPath()));
-			}
-		}
+        }
 
 		return classpathElements;
 	}
 
-    ModuleRootManager moduleRootManagerInstance() {
-        return ModuleRootManager.getInstance(module);
-	}
+    CompilerModuleExtension compilerModuleExtensionInstance() {
+        return CompilerModuleExtension.getInstance(module);
+    }
 
 	private String appendInfinitestJarTo(String classpath) {
 		StringBuilder builder = new StringBuilder(classpath);

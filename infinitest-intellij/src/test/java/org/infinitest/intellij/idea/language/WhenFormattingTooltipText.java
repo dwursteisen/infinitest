@@ -41,4 +41,12 @@ public class WhenFormattingTooltipText {
 
 		assertThat(renderer.getTooltipText(), containsString("BUG"));
 	}
+
+    @Test
+    public void shouldBeEquals() {
+		InfinitestGutterIconRenderer firstRenderer = new InfinitestGutterIconRenderer(new InnerClassFriendlyTestEvent(methodFailed(null, "", new RuntimeException("BUG"))));
+		InfinitestGutterIconRenderer secondRenderer = new InfinitestGutterIconRenderer(new InnerClassFriendlyTestEvent(methodFailed(null, "", new RuntimeException("BUG"))));
+
+        assertThat(firstRenderer, equalTo(secondRenderer));
+    }
 }

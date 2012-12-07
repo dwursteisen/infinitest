@@ -74,5 +74,9 @@ public class ScmUpdater extends DefaultProjectComponent implements GreenHook {
 		public String getMessageWhenInterruptedBeforeStart() {
 			return "Infinitest generated message";
 		}
-	}
+
+        public boolean shouldFail() {
+            throw new RuntimeException("Not yet implemented");
+        }
+    }
 }

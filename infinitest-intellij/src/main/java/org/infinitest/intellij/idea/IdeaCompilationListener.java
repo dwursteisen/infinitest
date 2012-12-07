@@ -50,7 +50,11 @@ public class IdeaCompilationListener implements CompilationStatusListener, TestC
 		}
 	}
 
-	public void setRunTests(boolean shouldRunTests) {
+    public void fileGenerated(String s, String s2) {
+        throw new RuntimeException("Not yet implemented");
+    }
+
+    public void setRunTests(boolean shouldRunTests) {
 		if (shouldRunTests && !this.shouldRunTests) {
 			core.reload();
 		}
