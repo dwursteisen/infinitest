@@ -76,7 +76,7 @@ public class ScmUpdater extends DefaultProjectComponent implements GreenHook {
 		}
 
         public boolean shouldFail() {
-            throw new RuntimeException("Not yet implemented");
+            return false;
         }
     }
 }

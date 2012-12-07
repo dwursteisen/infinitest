@@ -50,8 +50,15 @@ public class IdeaCompilationListener implements CompilationStatusListener, TestC
 		}
 	}
 
-    public void fileGenerated(String s, String s2) {
-        throw new RuntimeException("Not yet implemented");
+    public void fileGenerated(String outputRoot, String relativePath) {
+        RuntimeEnvironment runtimeEnvironment = moduleSettings.getRuntimeEnvironment();
+        if (runtimeEnvironment == null) {
+            return;
+        }
+        core.setRuntimeEnvironment(runtimeEnvironment);
+        if (shouldRunTests) {
+            core.update();
+        }
     }
 
     public void setRunTests(boolean shouldRunTests) {
